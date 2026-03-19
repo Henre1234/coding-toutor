@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coding Toutor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      background: #38bdf8;
+      cursor: pointer;
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    #dashboard {
+      display: none;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>💻 Coding Toutor</header>
+
+<div class="container" id="login">
+  <h2>Login</h2>
+  <input id="user" placeholder="Username"><br>
+  <input id="pass" type="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+</div>
+
+<div class="container" id="dashboard">
+  <h2>Welcome Henry 👑</h2>
+
+  <div class="card">
+    <button onclick="startCall()">📞 Start Meeting</button><br>
+    <button onclick="createLevel()">➕ Create Level</button><br>
+    <button onclick="playGame()">🎮 Play Student Game</button>
+  </div>
+
+  <h3>🎮 Scratch Workspace</h3>
+
+  <iframe 
+    src="https://scratch.mit.edu/projects/editor/"
+    width="100%" 
+    height="500">
+  </iframe>
+
+</div>
+
+<script>
+function login() {
+  let u = document.getElementById("user").value;
+  let p = document.getElementById("pass").value;
+
+  if(u === "henry" && p === "hill10") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+  } else {
+    alert("Wrong login");
+  }
+}
+
+function startCall() {
+  alert("Meeting started (Tutor/Admin host)");
+}
+
+function createLevel() {
+  let level = prompt("Enter new level name:");
+  if(level){
+    alert("Level '" + level + "' created!");
+  }
+}
+
+function playGame() {
+  alert("Playing student game (future live mode)");
+}
+</script>
+
+</body>
+</html>
